@@ -1,16 +1,62 @@
-(function(){
+(function () {
 
-    console.log("I'm main app.js");
+
+    angular.module("bitblogger",["register", "login", "header"]);
+
+    angular.module("bitblogger").config([function () {
+        console.log("Config: bitblogger");
+    }]);
+    
+    angular.module("bitblogger").controller("mainCtrl", [mainCtrlFn]);
+
+    function mainCtrlFn(){
+        var vm = this;
+        vm.headerTemplate = "app/header/header.tpl.html";
+        vm.appName = "BITBLOGGER";
+        vm.show = false;
+        vm.showAppName = function(){
+            vm.show = true;
+        };
+
+        vm.hideAppName = function(){
+            vm.show = false;
+        };
+    }
+    
 })();
 (function(){
 
-    console.log("I'm login");
+    angular.module("login",[]);
+
+    angular.module("login").config([function(){
+
+        console.log("Config: Login.js");
+        
+    }])
 })();
 (function(){
 
-    console.log("I'm register.");
+    angular.module("login").controller("loginCtrl", [loginCtrlFn]);
+
+    function loginCtrlFn(){
+        
+    }
 })();
 (function(){
 
-    console.log("I'm product");
+    angular.module("register",[]);
+
+    angular.module("register").config([function(){
+
+        console.log("Config: register.js");
+        
+    }])
+})();
+(function(){
+
+    angular.module("register").controller("registerCtrl", [registerCtrlFn]);
+
+    function registerCtrlFn(){
+        
+    }
 })();
