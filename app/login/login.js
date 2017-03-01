@@ -1,10 +1,12 @@
-(function(){
+(function () {
 
-    angular.module("login",[]);
+    angular.module("login", []);
 
-    angular.module("login").config([function(){
+    angular.module("login")
+        .config([function () {
 
-        console.log("Config: Login.js");
-        
-    }])
+            console.log("Config: login");
+
+        }]);
+
 })();

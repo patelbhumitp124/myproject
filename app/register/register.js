@@ -1,10 +1,12 @@
-(function(){
+(function () {
 
-    angular.module("register",[]);
+    angular.module("register", []);
 
-    angular.module("register").config([function(){
+    angular.module("register")
+        .config([function () {
 
-        console.log("Config: register.js");
-        
-    }])
+            console.log("Config: register");
+
+        }]);
+
 })();

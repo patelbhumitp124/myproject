@@ -1,9 +1,12 @@
-(function(){
+(function () {
 
-    angular.module("header",[]);
+    angular.module("header", []);
 
-    angular.module("header").config([function(){
+    angular.module("header")
+        .config([function () {
 
-        console.log("Config: header.js");
-    }])
+            console.log("Config: header");
+
+        }]);
+
 })();

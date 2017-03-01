@@ -1,8 +1,13 @@
-(function(){
+(function () {
 
-    angular.module("register").controller("registerCtrl", [registerCtrlFn]);
 
     function registerCtrlFn(){
         
+        console.log("Controller: register");
+        
     }
+
+    angular.module("register")
+        .controller("registerCtrl", [registerCtrlFn]);
+
 })();
