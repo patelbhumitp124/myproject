@@ -1,0 +1,10 @@
+<div class="panel panel-primary" ng-controller="commentsCtrl as cc">
+    <div class="panel-heading">
+        <h3 class="panel-title">Comments</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="well well-sm" ng-repeat="comments in cc.commentsList">Blog:{{comments.blogId}}-Comment
+            {{comments.commentId}}:-{{comments.commentText}}</div>
+    </div>
+</div>
