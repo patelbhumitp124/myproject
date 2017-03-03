@@ -14,6 +14,7 @@
         vm.appName = "BITBLOGGER";
         vm.headerTemplate = "app/header/header.tpl.html";
         vm.commentsTemplate = "app/comments/comments.tpl.html";
+        vm.registerTemplate = "app/register/register.tpl.html";
         vm.show = false;
         vm.showName = function(){
             vm.show = true;

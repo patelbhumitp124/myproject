@@ -18,7 +18,8 @@
         <h3>Write your name in texbox:
             <input type="text" ng-model="title">{{title}}</h3>
 
-
+        <div ng-include="mc.registerTemplate"></div>
+        
         <div style="display:inline">
             <button type="button" class="btn btn-primary" ng-click="mc.showName()">ShowAppName</button>
             <button type="button" class="btn btn-primary" ng-click="mc.hideName()">HideAppName</button>
@@ -33,6 +34,7 @@
 
     <script src="app/register/register.js"></script>
     <script src="app/register/registerCtrl.js"></script>
+    <script src="app/register/registerSvc.js"></script>
 
     <script src="app/login/login.js"></script>
     <script src="app/login/loginCtrl.js"></script>
