@@ -1,0 +1,56 @@
+{
+    "postsList": [
+        {
+            "Id": 1,
+            "postText": "This is post 1111.",
+            "createdDate": "03/03/2017",
+            "postedBy": {
+                "userId": "user1",
+                "userName": "Bhumit"
+            },
+            "commentsList": [
+                {
+                    "blogId": 1,
+                    "commentId": "cm1",
+                    "commentText": "This is first comment for blog id 1."
+                },
+                {
+                    "blogId": 1,
+                    "commentId": "cm2",
+                    "commentText": "This is second comment for blog id 1."
+                },
+                {
+                    "blogId": 1,
+                    "commentId": "cm3",
+                    "commentText": "This is third comment for blog id 1."
+                }
+            ]
+        },
+        {
+            "Id": 2,
+            "postText": "This is post 222.",
+            "createdDate": "03/03/2017",
+            "postedBy": {
+                "userId": "user2",
+                "userName": "Ravi"
+            },
+            "commentsList": [
+                {
+                    "blogId": 2,
+                    "commentId": "cm1",
+                    "commentText": "This is first comment for blog id 2."
+                },
+                {
+                    "blogId": 2,
+                    "commentId": "cm2",
+                    "commentText": "This is second comment for blog id 2."
+                },
+                {
+                    "blogId": 3,
+                    "commentId": "cm3",
+                    "commentText": "This is third comment for blog id 3."
+                }
+            ]
+        }
+    ]
+}
