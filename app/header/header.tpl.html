@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" ng-repeat="items in hc.navItems">
-                <li><a href="#">{{items.value}}</a></li>
+                <li><a ui-sref="{{items.key}}">{{items.value}}</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">

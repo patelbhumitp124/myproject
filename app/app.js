@@ -1,10 +1,29 @@
 (function () {
 
-    angular.module("bitblogger", ["register", "login", "header", "comments", "product", "posts"]);
+    angular.module("bitblogger", ["register", "login", "header", "comments", "product", "posts", "ui.router"]);
 
     angular.module("bitblogger")
-        .config([function () {
+        .config(["$stateProvider", function ($stateProvider) {
             console.log("Config: bitblogger");
+
+            var registerObj = {
+                templateUrl: "app/register/register.tpl.html"
+            };
+            var loginObj = {
+                templateUrl: "app/login/login.tpl.html"
+            };
+            var postsObj = {
+                templateUrl: "app/posts/posts.tpl.html"
+            };
+            var commentsObj = {
+                templateUrl: "app/comments/comments.tpl.html"
+            };
+
+            $stateProvider.state("register",registerObj);
+            $stateProvider.state("login",loginObj);
+            $stateProvider.state("posts",postsObj);
+            $stateProvider.state("comments",commentsObj);
+
         }]);
 
     function mainCtrlFn(){

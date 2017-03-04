@@ -1,19 +1,21 @@
-<div ng-controller="postsCtrl as pc">
-    <h2 class="text-info">Posts</h2>
-<div class="panel panel-primary" ng-repeat="post in pc.postsList">
-    <div class="panel-body">
-        <label>POST:: "{{post.postText}}" created by {{post.postedBy.userName}}</label>
+<div style="margin-top:15px;">
+    <div ng-controller="postsCtrl as pc">
+        <h2 class="text-info">Posts</h2>
+        <div class="panel panel-primary" ng-repeat="post in pc.postsList">
+            <div class="panel-body">
+                <label>POST:: "{{post.postText}}" created by {{post.postedBy.userName}}</label>
+            </div>
+
+
+
+            <h3 class="panel-title">Comments</h3>
+
+            <div class="panel-body">
+                <div class="well well-sm" ng-repeat="comments in post.commentsList">Blog:{{comments.blogId}}-Comment {{comments.commentId}}:-{{comments.commentText}}
+                </div>
+            </div>
+        </div>
     </div>
-    
-    
-  
-        <h3 class="panel-title">Comments</h3>
-    
-    <div class="panel-body">
-        <div class="well well-sm" ng-repeat="comments in post.commentsList">Blog:{{comments.blogId}}-Comment
-            {{comments.commentId}}:-{{comments.commentText}}</div>
-    </div>
-</div>
 </div>
 
 <!--
