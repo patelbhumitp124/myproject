@@ -1,7 +1,7 @@
 (function () {
 
 
-    function headerCtrlFn() {
+    function headerCtrlFn($state) {
 
         console.log("Controller: header");
 
@@ -15,9 +15,13 @@
             { "key": "product", "value": "PRODUCT" },
             { "key": "photo", "value": "PHOTO" }];
 
+            vm.changeState = function(data){
+                console.log(data);
+                $state.go(data);
+            }
     }
 
     angular.module("header")
-        .controller("headerCtrl", [headerCtrlFn]);
+        .controller("headerCtrl", ["$state", headerCtrlFn]);
 
 })();

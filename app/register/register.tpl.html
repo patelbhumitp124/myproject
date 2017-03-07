@@ -1,14 +1,16 @@
 <div style="margin-top:15px;">
 <form class="form-horizontal" ng-controller="registerCtrl as rc">
     <div class="form-group">
-        <label for="select" class="col-lg-2 control-label">Country</label>
+        <div class="row">
+        <label for="select" class="col-xs-1 control-label">Country</label>
         <div class="col-lg-3">
             <select class="form-control" id="select" ng-model="rc.selectedCountry"
             ng-options="country.name for country in rc.countriesList">
           
             </select>
-            <br>
+            <br/>
         </div>
+    </div>
     </div>
 </form>
 </div>
