@@ -7,15 +7,19 @@
             console.log("Config: bitblogger");
 
             var registerObj = {
+                url: "/register",
                 templateUrl: "app/register/register.tpl.html"
             };
             var loginObj = {
+                url: "/login",
                 templateUrl: "app/login/login.tpl.html"
             };
             var postsObj = {
+                url: "/posts",
                 templateUrl: "app/posts/posts.tpl.html"
             };
             var commentsObj = {
+                url: "/comments",
                 templateUrl: "app/comments/comments.tpl.html"
             };
 
