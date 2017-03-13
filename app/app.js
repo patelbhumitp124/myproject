@@ -6,23 +6,31 @@
         .config(["$stateProvider", function ($stateProvider) {
             console.log("Config: bitblogger");
 
+            // var headerObj = {
+            //     templateUrl: "app/header/header.tpl.html",
+            //     controller: "headerCtrl as hc"
+            // };
             var registerObj = {
                 url: "/register",
-                templateUrl: "app/register/register.tpl.html"
+                templateUrl: "app/register/register.tpl.html",
+                controller: "registerCtrl as rc"
             };
             var loginObj = {
                 url: "/login",
-                templateUrl: "app/login/login.tpl.html"
+                templateUrl: "app/login/login.tpl.html",
+                controller: "loginCtrl as lc"
             };
             var postsObj = {
                 url: "/posts",
-                templateUrl: "app/posts/posts.tpl.html"
+                templateUrl: "app/posts/posts.tpl.html",
+                controller: "postsCtrl as pc"
             };
             var commentsObj = {
                 url: "/comments",
-                templateUrl: "app/comments/comments.tpl.html"
+                templateUrl: "app/comments/comments.tpl.html",
+                controller: "commentsCtrl as cc"
             };
-
+            // $stateProvider.state("header", headerObj);
             $stateProvider.state("register",registerObj);
             $stateProvider.state("login",loginObj);
             $stateProvider.state("posts",postsObj);
@@ -36,6 +44,7 @@
         var vm = this;
         vm.appName = "BITBLOGGER";
         vm.headerTemplate = "app/header/header.tpl.html";
+        vm.headerTemplate2 = "app/header/header2.tpl.html";
         vm.commentsTemplate = "app/comments/comments.tpl.html";
         vm.registerTemplate = "app/register/register.tpl.html";
         vm.postsTemplate = "app/posts/posts.tpl.html";

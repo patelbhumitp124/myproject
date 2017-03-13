@@ -5,6 +5,7 @@
 
         var vm = this;
         console.log("Controller: register");
+        
 
         registerSvc.getCountriesList()
             .then(function (response) {
@@ -17,6 +18,8 @@
             .finally(function (response) {
                 console.log(response);
             });
+        
+        
 
     }
 
