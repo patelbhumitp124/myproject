@@ -1,14 +1,17 @@
 <div style="margin-top:15px;">
-<div class="col-xs-2">
-        <h2><a href="" class="text-success">Groups</a></h2><br/>
-        <h2><a href="" class="text-success">Profile</a></h2>
 
+<div class="col-xs-2">
+    <div class="panel panel-primary"  style="padding: 10px;">
+        <h2><a href="" class="text-info">Groups</a></h2><br/>
+        <h2><a href="" class="text-info">Profile</a></h2>
+
+</div>
 </div>
 <div class="col-xs-8">
 
-    <div>
+    <div class="panel panel-primary" style="padding: 10px;">
         <h2 class="text-info">Posts</h2>
-        <div class="panel panel-primary" ng-repeat="post in pc.postsList">
+        <div  ng-repeat="post in pc.postsList">
             <div class="panel-body">
                 <label>POST:: "{{post.postText}}" created by {{post.postedBy.userName}}</label>
             </div>
@@ -26,9 +29,11 @@
 
 </div>
 <div class="col-xs-2">
+<div class="panel panel-primary" style="padding: 10px;">
 
-        <h2><a href="" class="text-success">Friends</a></h2>
+        <h2><a href="" class="text-info">Friends</a></h2>
 
+</div>
 </div>
 </div>
 

@@ -1,15 +1,66 @@
 <div style="margin-top:15px;">
+    <h1>Registration Page</h1><br/>
     <form class="form-horizontal">
-        <div class="form-group">
-            <div class="row">
-                <label for="select" class="col-xs-1 control-label">Country</label>
-                <div class="col-lg-3">
-                    <select class="form-control" ng-model="rc.selectedCountry" ng-options="country.name for country in rc.countriesList">
 
-            </select>
-                    <br/>
-                </div>
+
+        <div class="form-group">
+            <label for="inputFirstName" class="col-sm-4 control-label">First Name:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname"
+                ng-model="rc.user.firstname">
             </div>
         </div>
+        <div class="form-group">
+            <label for="inputLastName" class="col-sm-4 control-label">Last Name:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Lastname"
+                ng-model="rc.user.lastname">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUserName" class="col-sm-4 control-label">User Name:</label>
+            <div class="col-xs-3">
+                <input type="text" class="form-control" id="inputUserName" placeholder="Username"
+                ng-model="rc.user.username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-4 control-label">Password</label>
+            <div class="col-xs-3">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                ng-model="rc.user.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAge" class="col-lg-4 control-label">Age</label>
+            <div class="col-xs-3">
+                <input type="number" class="form-control" id="inputAge" placeholder="Age"
+                ng-model="rc.user.age">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputGender" class="col-lg-4 control-label">Gender</label>
+            <div class="col-xs-3">
+                <input type="radio" name="gender" value="M" id="inputGender" ng-model="rc.user.gender"> Male <br/>
+                <input type="radio" name="gender" value="F" ng-model="rc.user.gender"> Female
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="select" class="col-lg-4 control-label">Country</label>
+            <div class="col-xs-3">
+                <select class="form-control" ng-model="rc.user.selectedCountry" ng-options="country.name for country in rc.countriesList">
+                </select><br/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-4 control-label"></label>
+            <div class="col-xs-3">
+                <button type="button" class="btn btn-success">Register</button>
+            </div>
+        </div>
+
     </form>
+    {{rc.user|json}}
+
 </div>
