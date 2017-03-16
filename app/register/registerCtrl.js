@@ -11,7 +11,7 @@
             .then(function (response) {
                 console.log(response);
                 vm.countriesList = response.data.countriesList;
-                vm.selectedCountry = vm.countriesList[15];
+                vm.user.selectedCountry = vm.countriesList[229];
             })
             .catch(function (response) {
                 console.log(response);
