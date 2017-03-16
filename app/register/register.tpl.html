@@ -1,15 +1,19 @@
 <div style="margin-top:15px;">
     <h1>Registration Page</h1><br/>
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="registerForm" novalidate>
 
-
+       
         <div class="form-group">
             <label for="inputFirstName" class="col-sm-4 control-label">First Name:</label>
-            <div class="col-xs-3">
+            <div class="col-sm-3">
                 <input type="text" class="form-control" id="inputFirstName" placeholder="Firstname"
-                ng-model="rc.user.firstname">
+                ng-model="rc.user.firstname"
+                name="firstname"
+                ng-required="true">
+                <p>First name is required.</p>
             </div>
         </div>
+        
         <div class="form-group">
             <label for="inputLastName" class="col-sm-4 control-label">Last Name:</label>
             <div class="col-xs-3">
