@@ -1,11 +1,15 @@
 (function () {
 
 
-    function registerCtrlFn(registerSvc) {
+    function registerCtrlFn(registerSvc, $state) {
 
         var vm = this;
         console.log("Controller: register");
         vm.user = {};
+        vm.nextPage = function(){
+            $state.go("login");
+           
+        };
 
         registerSvc.getCountriesList()
             .then(function (response) {
@@ -25,6 +29,6 @@
     }
 
     angular.module("register")
-        .controller("registerCtrl", ["registerSvc", registerCtrlFn]);
+        .controller("registerCtrl", ["registerSvc","$state", registerCtrlFn]);
 
 })();
