@@ -30,11 +30,18 @@
                 templateUrl: "app/comments/comments.tpl.html",
                 controller: "commentsCtrl as cc"
             };
+
+            var homeobj = {
+                url: "/#",
+                //controller: "mainCtrl"
+            };
+
             // $stateProvider.state("header", headerObj);
             $stateProvider.state("register",registerObj);
             $stateProvider.state("login",loginObj);
             $stateProvider.state("posts",postsObj);
             $stateProvider.state("comments",commentsObj);
+            $stateProvider.state("home",homeobj);
 
         }]);
 
@@ -44,7 +51,7 @@
         var vm = this;
         vm.appName = "BITBLOGGER";
         vm.headerTemplate = "app/header/header.tpl.html";
-        vm.headerTemplate2 = "app/header/header2.tpl.html";
+        // vm.headerTemplate2 = "app/header/header2.tpl.html";
         vm.commentsTemplate = "app/comments/comments.tpl.html";
         vm.registerTemplate = "app/register/register.tpl.html";
         vm.postsTemplate = "app/posts/posts.tpl.html";
