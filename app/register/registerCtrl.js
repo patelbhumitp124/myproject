@@ -14,7 +14,7 @@
         registerSvc.getCountriesList()
             .then(function (response) {
                 console.log(response);
-                vm.countriesList = response.data.countriesList;
+                vm.countriesList = response;
                 vm.user.selectedCountry = vm.countriesList[229];
             })
             .catch(function (response) {
