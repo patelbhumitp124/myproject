@@ -1,11 +1,11 @@
 (function () {
 
 
-    function postsCtrlFn(postsSvc) {
+    function postsCtrlFn(postsSvc, $state) {
 
         console.log("Controller: posts");
         var vm = this;
-
+        console.log("post ctrl $state"+$state);
         postsSvc.getPostsList()
         .then(function(response){
             vm.postsList = response.data.postsList;
@@ -18,6 +18,6 @@
     }
 
     angular.module("posts")
-        .controller("postsCtrl", ["postsSvc", postsCtrlFn]);
+        .controller("postsCtrl", ["postsSvc", "$state", postsCtrlFn]);
 
 })();

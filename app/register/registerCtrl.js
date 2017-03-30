@@ -7,7 +7,7 @@
         console.log("Controller: register");
         vm.user = {};
         vm.nextPage = function(){
-            $state.go("login");
+            $state.go("login",{userInfo:vm.user});
            
         };
 

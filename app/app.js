@@ -3,7 +3,7 @@
     angular.module("bitblogger", ["register", "login", "header", "comments", "product", "posts", "ui.router"]);
 
     angular.module("bitblogger")
-        .config(["$stateProvider", function ($stateProvider) {
+        .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider) {
             console.log("Config: bitblogger");
 
             // var headerObj = {
@@ -18,7 +18,8 @@
             var loginObj = {
                 url: "/login",
                 templateUrl: "app/login/login.tpl.html",
-                controller: "loginCtrl as lc"
+                controller: "loginCtrl as lc",
+                params: {userInfo: null}
             };
             var postsObj = {
                 url: "/posts",
