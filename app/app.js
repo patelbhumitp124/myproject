@@ -37,12 +37,19 @@
                 //controller: "mainCtrl"
             };
 
+            var productObj = {
+                url: "/product",
+                templateUrl: "app/product/product.tpl.html",
+                controller: "productCtrl as prdc"
+            }
+
             // $stateProvider.state("header", headerObj);
             $stateProvider.state("register",registerObj);
             $stateProvider.state("login",loginObj);
             $stateProvider.state("posts",postsObj);
             $stateProvider.state("comments",commentsObj);
             $stateProvider.state("home",homeobj);
+            $stateProvider.state("product",productObj);
 
         }]);
 
