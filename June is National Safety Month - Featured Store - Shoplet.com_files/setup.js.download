@@ -1,0 +1,117 @@
+
+mybuys.base_initPage = mybuys.initPage;
+mybuys.initPage = function()
+{
+	if((this.params["pt"]) && (this.params["pt"].indexOf("purchase") != -1))
+	{
+		if(this.params['email'])
+		{
+			var testemail = Math.max(this.params['email'].toUpperCase().indexOf("@SHOPLET.COM"));
+			if(testemail<0)
+			{
+				this.base_initPage();
+			}
+		} 
+		else 
+		{
+			this.base_initPage();
+		}
+	}
+	else
+	{
+		this.base_initPage();
+	}
+}
+mybuys.processResponseHTML = function(zoneHtmls)
+	{	clearTimeout(this.requestProcId);
+		if (!this.renderOK) return;
+		var leftoverZones=[]
+		for (var zk=0;zk<this.zoneKeysToZoneDivIds.length;zk++)
+		{	if (this.zoneKeysToZoneDivIds[zk])
+				leftoverZones[zk]=true;
+		}
+		for (zonekey in zoneHtmls)
+		{
+			var zoneDivId = this.zoneKeysToZoneDivIds[zonekey];
+			if (!zoneDivId) continue;
+			var zoneDiv = document.getElementById(zoneDivId);
+			
+			if (zoneDiv)
+			{
+				
+				zoneDiv.innerHTML=zoneHtmls[zonekey];
+				leftoverZones[zonekey]=false;
+			}
+		}
+		for (var zk=0;zk<leftoverZones.length;zk++)
+		{	if (leftoverZones[zk])
+				this.loadFailoverImage(zk);
+		}
+	
+	    if (mybuys.params['chn'] && mybuys.params['chn'] == 'm')
+	    {
+			jQuery(function() {
+				jQuery(".mbCarousel").jCarouselLite({
+					btnNext: ".mbCnext",
+					btnPrev: ".mbCprev",
+					visible: 2,
+					scroll: 2,
+					speed: 300
+				});
+			});
+		}
+	}
+mybuys.setClient("SHOPLET");
+
+mybuys.enableZones();
+
+
+
+//mobile styling
+mybuys.setStyle('.mbCzone','width','300px','font-family','Arial,Verdana,Helvetica,Sans-Serif','position','relative','padding','0px 10px 0px');
+mybuys.setStyle('.mbClegend','text-align','center','font-size','14pt','font-weight','bold', 'display', 'none');
+mybuys.setStyle('.mbCitem','width','130px','height','200px','margin','0px 10px 0px','text-align','center');
+mybuys.setStyle('.mbCimg','width','130px','height','130px','text-align','center');
+mybuys.setStyle('.mbCimg img','border','none');
+mybuys.setStyle('a.mbCprev','text-decoration','none','display','block','height','50px','width','40px','position','absolute',
+'top','50px','left','0px','font-size','30px','text-align','left','color','#000000','z-index','100','background-image',
+'url("http://w.p.mybuys.com/clients/SHOPLET/images/arrow_left.png")','background-repeat','no-repeat','background-position','left center');
+mybuys.setStyle('a.mbCnext','text-decoration','none','display','block','height','50px','width','40px','position','absolute',
+'top','50px','right','0px','font-size','30px','text-align','right','color','#000000','z-index','100','background-image',
+'url("http://w.p.mybuys.com/clients/SHOPLET/images/arrow_right.png")','background-repeat','no-repeat','background-position','right center');
+mybuys.setStyle('.mbCname a','text-decoration','none','font-size','11px','color','#0187C5','font-weight','normal');
+mybuys.setStyle('.mbCprice','margin-top','5px');
+mybuys.setStyle('.mbCsale','margin-top','5px');
+mybuys.setStyle('.mbCprice a','text-decoration','none','font-size','12px','color','#C4393E','font-weight','bold');
+mybuys.setStyle('.mbCsale a','text-decoration','none','font-size','12px','color','#C4393E','font-weight','bold');
+//web styling
+mybuys.setStyle('.mbzone','border','solid 1px #DBDBDB','-moz-border-radius', '5px','border-radius','5px');
+mybuys.setStyle('.mbitem','padding','10px 0px 10px');
+mybuys.setStyle('.mblegend','padding-left','4px','font-family','Arial, Verdana, Helvetica, sans-serif','text-shadow','1px 1px 0 #FFFFFF' );
+mybuys.setStyle('.mbnamelink:link','font-family','Arial, Helvetica, Verdana, Sans-serif','font-size','11px','color','#0187C5');
+mybuys.setStyle('.mbnamelink:visited','font-family','Arial, Helvetica, Verdana, Sans-serif','font-size','11px','color','#0187C5');
+mybuys.setStyle('.mbnamelink:hover','font-family','Arial, Helvetica, Verdana, Sans-serif','font-size','11px','color','#CC0000');
+mybuys.setStyle('.mbpricelink:link','font-family','Arial,Verdana,Helvetica,Sans-Serif','font-size','12px', 'color','#C71A20');
+mybuys.setStyle('.mbpricelink:visited','font-family','Arial,Verdana,Helvetica,Sans-Serif','font-size','12px', 'color','#C71A20');
+mybuys.setStyle('.mbpricelink:hover','font-family','Arial,Verdana,Helvetica,Sans-Serif','font-size','12px', 'color','#C71A20');
+//mybuys.setStyle('.mblegend','background','#DBDBDB','text-align','left','font-style','Arial, Verdana, Helvetica, sans-serif','font-size','15px');
+mybuys.setStyle('td.mblegend','text-align','left','font-style','Arial, Verdana, Helvetica, sans-serif','font-size','15px','background',
+'url("http://images.shopletcdn.com/img/bg/headers_2.png") repeat scroll 100% 0 transparent','height','18px','padding','10px 6px 6px 4px');
+//mybuys.setStyle('.mblegend2','text-align','left','font-style','Arial, Verdana, Helvetica, sans-serif','font-size','15px','background',
+//'url("http://images.shopletcdn.com/img/bg/headers_2.png") repeat scroll 0 0 transparent');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone1 .mbnamerowspan','text-align','left');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone1 .mbpricerowspan','text-align','left');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone1 .mbitem','padding','0');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone1 .mbzone','border','1px solid #DBDBDB','-moz-border-radius', '5px','border-radius','5px');
+mybuys.setStyleByPageType('CATEGORY','#mybuyspagezone1 .mbitem','width','168px','padding-left','5px','padding-right','5px');
+mybuys.setStyleByPageType('CATEGORY','#mybuyspagezone1 .mblegend','text-align','center','font-family','Arial, Verdana, Helvetica, sans-serif', 'font-size','15px', 'font-weight','Bold', 'Color', '#000000','padding','0','-moz-border-radius-topleft', '2px','border-top-left-radius','2px','-moz-border-radius-topright', '2px','border-top-right-radius','2px' );
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone2 .mbitem','width','159px','padding-left','10px','padding-right','10px');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone2 .mbzone','margin','0 1px');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone3 .mbitem','width','159px','padding-left','10px','padding-right','10px');
+mybuys.setStyleByPageType('PRODUCT_DETAILS','#mybuyspagezone3 .mbzone','margin','0 1px');
+mybuys.setStyleByPageType('SHOPPING_CART','#mybuyspagezone1 .mbitem','width','158px','padding-left','17px','padding-right','17px');
+mybuys.setStyleByPageType('SHOPPING_CART','#mybuyspagezone2 .mbitem','width','158px','padding-left','17px','padding-right','17px');
+mybuys.setStyleByPageType('ORDER_CONFIRMATION','.mbitem','width','158px','padding-left','17px','padding-right','17px');
+mybuys.applyStyles();
+
+mybuys.setFailOverMsecs(5000);

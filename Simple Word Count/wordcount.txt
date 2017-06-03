@@ -1,3 +1,0 @@
-
-Hello Hadoop Hello World Goodbye Hadoop 
-Hello World World
